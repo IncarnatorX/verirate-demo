@@ -1,23 +1,21 @@
 import { Route, Routes } from "react-router";
 
 import Layout from "../pages/Layout/Layout.jsx";
+import Login from "../components/Auth/Login/Login.jsx";
 
 // ADMIN DASHBOARD IMPORTS
 import AdminDashboard from "../pages/adminDashboard/AdminDashboard";
-// import AdminLayout from "../pages/adminDashboard/AdminLayout";
 import Disputes from "../pages/adminDashboard/pages/Disputes/Disputes.jsx";
 import Employer from "../pages/adminDashboard/pages/Employer/Employer.jsx";
 import Monitoring from "../pages/adminDashboard/pages/Monitoring/Monitoring.jsx";
 
 // EMPLOYER DASHBOARD IMPORTS
-// import EmployerLayout from "../pages/employerDashboard/EmployerLayout";
 import EmployerDashboard from "../pages/employerDashboard/EmployerDashboard";
 import Analytics from "../pages/employerDashboard/pages/Analytics/Analytics.jsx";
 import Blacklist from "../pages/employerDashboard/pages/Blacklist/Blacklist.jsx";
 import EmployeeList from "../pages/employerDashboard/pages/EmployeeList/EmployeeList.jsx";
 import History from "../pages/employerDashboard/pages/History/History.jsx";
 import Reviews from "../pages/employerDashboard/pages/Reviews/Reviews.jsx";
-import Login from "../components/Auth/Login/Login.jsx";
 
 const AllRoutes = () => {
   return (
