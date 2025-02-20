@@ -2,6 +2,7 @@ import { useState } from "react";
 import SidebarItems from "../components/SidebarItems";
 import logo from "../assets/logo.png";
 import MenuIcon from "@mui/icons-material/Menu";
+import CloseIcon from "@mui/icons-material/Close";
 import Avatar from "@mui/material/Avatar";
 
 const Header = () => {
@@ -10,8 +11,11 @@ const Header = () => {
   return (
     <header className="flex items-center justify-between p-4 bg-[#dbecff] text-black h-15">
       <div className="flex items-center gap-2">
-        <div className="md:hidden mr-2">
-          <MenuIcon onClick={() => setToggleMenu(!toggleMenu)} />
+        <div
+          className="md:hidden mr-2 cursor-pointer"
+          onClick={() => setToggleMenu(!toggleMenu)}
+        >
+          {toggleMenu ? <CloseIcon /> : <MenuIcon />}
         </div>
         <img src={logo} alt="Logo" className="w-9 h-9 rounded-3xl shadow-lg" />
         <span className="text-xl font-bold">VeriRate</span>
@@ -23,11 +27,11 @@ const Header = () => {
         </button>
       </div>
       <div
-        className={`fixed top-0 right-0 h-full w-2/5 bg-gray-200 shadow-xl z-50 transform transition-transform duration-300 ease-in-out ${
-          toggleMenu ? "translate-x-0" : "translate-x-full"
+        className={`px-3 fixed top-15 left-0 h-full w-fit bg-[#0a3469] shadow-xl z-50 transform transition-transform duration-300 ease-in-out ${
+          toggleMenu ? "translate-x-0" : "-translate-x-full"
         } md:hidden`}
       >
-        <div className="flex justify-between items-center bg-blue-500 z-50">
+        <div className="contents md:flex justify-between items-center bg-[#0a3469] z-50">
           <SidebarItems />
         </div>
       </div>

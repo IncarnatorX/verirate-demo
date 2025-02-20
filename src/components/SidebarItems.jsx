@@ -9,14 +9,15 @@ import {
   Settings,
 } from "@mui/icons-material";
 import LogoutIcon from "@mui/icons-material/Logout";
+import { Link } from "react-router";
 
 const SidebarItems = () => {
   const role = "admin";
 
   const adminMenuItems = [
-    { name: "Employer", icon: <Home /> },
-    { name: "Disputes", icon: <Person /> },
-    { name: "Monitoring", icon: <Settings /> },
+    { name: "Employer", icon: <Home />, path: "/admin/employer" },
+    { name: "Disputes", icon: <Person />, path: "/admin/disputes" },
+    { name: "Monitoring", icon: <Settings />, path: "/admin/monitoring" },
   ];
 
   const employeeMenuItems = [
@@ -39,13 +40,14 @@ const SidebarItems = () => {
     <>
       <div className="flex flex-col items-center font-medium">
         {items.map((item, index) => (
-          <div
+          <Link
             key={index}
+            to={item.path}
             className="flex items-center px-4 py-4 gap-4 text-md text-white cursor-pointer hover:bg-[#afe8f6] transition-all w-full hover:shadow-md"
           >
             <span>{item.icon}</span>
             <span>{item.name}</span>
-          </div>
+          </Link>
         ))}
       </div>
       <div className="mb-5">
